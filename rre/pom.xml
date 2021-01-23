@@ -40,12 +40,50 @@
                 <groupId>io.sease</groupId>
                 <artifactId>rre-maven-external-solr-plugin</artifactId>
                 <version>8.3.0</version>
-                <!-- the configuration below is provided just for example, as it perfectly matches default values -->
                 <configuration>
+                    <!--
+                        RRE expects a folder which contains one subfolder for each iteration.
+                        Being an external Solr context, an iteration configuration is actually
+                        a file which provides the coordinates of the target solr
+                        (e.g. host, port, collectionName)
+                    -->
                     <configurations-folder>src/etc/configuration_sets</configurations-folder>
                     <ratings-folder>src/etc/ratings</ratings-folder>
+
+                    <!--
+                        Query templates associated to each iteration. It is possible
+                        to have 1 template for all version or, like in this example,
+                        query templates specific for each version.
+                    -->
                     <templates-folder>src/etc/templates</templates-folder>
-                    <fields>id,name</fields>
+
+                    <!--
+                        The evaluation produced by RRE will contain, for each
+                        query, for each version, the first top 10 returned items.
+                        This parameter indicates which (stored/docValues) fields
+                        compose those items.
+                    -->
+                    <fields>id,title</fields>
+                    <!--
+                        Includes only RRE-Workshop-* iterations
+                        The RRE workshop iterates through the four RRE-Workshop
+                        iterations so that's the reason why only the first one
+                        is initially uncommented.
+
+                        When all of them will be uncommented, instead of listing
+                        the 4 iterations one by one, the include param accepts
+                        also a regular expression (e.g. RRE-Workshop-*)
+                    -->
+                    <include>
+                        <param>RRE-WSP-1</param>
+                        <param>RRE-WSP-2</param>
+                        <param>RRE-WSP-3</param>
+                        <param>RRE-WSP-4</param>
+                    </include>
+
+                    <!--
+                        Metrics that don't require any parameter.
+                    -->
                     <metrics>
                         <!--param>io.sease.rre.core.domain.metrics.impl.Precision</param-->
                         <!--param>io.sease.rre.core.domain.metrics.impl.Recall</param-->
@@ -57,6 +95,11 @@
                         <!--param>io.sease.rre.core.domain.metrics.impl.PrecisionAtThree</param-->
                         <param>io.sease.rre.core.domain.metrics.impl.PrecisionAtTen</param>
                     </metrics>
+
+                    <!--
+                        Metrics that can be parameterized.
+                        https://github.com/SeaseLtd/rated-ranking-evaluator/wiki/Maven%20Plugin#parameterized-metrics
+                    -->
                     <parameterizedMetrics>
 <!--                        <expectedReciprocalRank>-->
 <!--                            <class>io.sease.rre.core.domain.metrics.impl.ExpectedReciprocalRank</class>-->
