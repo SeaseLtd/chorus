@@ -76,23 +76,16 @@
                     -->
                     <include>
                         <param>RRE-WSP-1</param>
-                        <param>RRE-WSP-2</param>
-                        <param>RRE-WSP-3</param>
-                        <param>RRE-WSP-4</param>
+<!--                        <param>RRE-WSP-2</param>-->
+<!--                        <param>RRE-WSP-3</param>-->
+<!--                        <param>RRE-WSP-4</param>-->
                     </include>
 
                     <!--
                         Metrics that don't require any parameter.
                     -->
                     <metrics>
-                        <!--param>io.sease.rre.core.domain.metrics.impl.Precision</param-->
-                        <!--param>io.sease.rre.core.domain.metrics.impl.Recall</param-->
-                        <!--param>io.sease.rre.core.domain.metrics.impl.ReciprocalRank</param-->
-                        <!--param>io.sease.rre.core.domain.metrics.impl.AveragePrecision</param-->
-                        <!--param>io.sease.rre.core.domain.metrics.impl.NDCGAtTen</param-->
-                        <!--param>io.sease.rre.core.domain.metrics.impl.PrecisionAtOne</param-->
-                        <!--param>io.sease.rre.core.domain.metrics.impl.PrecisionAtTwo</param-->
-                        <!--param>io.sease.rre.core.domain.metrics.impl.PrecisionAtThree</param-->
+<!--                    <param>io.sease.rre.core.domain.metrics.impl.NDCGAtTen</param>-->
                         <param>io.sease.rre.core.domain.metrics.impl.PrecisionAtTen</param>
                     </metrics>
 
@@ -101,13 +94,6 @@
                         https://github.com/SeaseLtd/rated-ranking-evaluator/wiki/Maven%20Plugin#parameterized-metrics
                     -->
                     <parameterizedMetrics>
-<!--                        <expectedReciprocalRank>-->
-<!--                            <class>io.sease.rre.core.domain.metrics.impl.ExpectedReciprocalRank</class>-->
-<!--                            <k>10</k>-->
-<!--                            <maximumGrade>4</maximumGrade>-->
-<!--                            <missingGrade>2.5</missingGrade>-->
-<!--                            <name>ERR@10_missing2.5</name>-->
-<!--                        </expectedReciprocalRank>                        -->
 <!--                        <ndcgAt4>-->
 <!--                            <class>io.sease.rre.core.domain.metrics.impl.NDCGAtK</class>-->
 <!--                            <k>4</k>-->
@@ -117,24 +103,14 @@
 <!--                            &lt;!&ndash; optional - name &ndash;&gt;-->
 <!--                            <name>NDCG@4</name>-->
 <!--                        </ndcgAt4>-->
-<!--                        <ndcgAt8>-->
-<!--                            <class>io.sease.rre.core.domain.metrics.impl.NDCGAtK</class>-->
-<!--                            <k>8</k>-->
-<!--                            &lt;!&ndash; optional - max/default grades &ndash;&gt;-->
-<!--                            <maximumGrade>4</maximumGrade>-->
-<!--                            <missingGrade>2</missingGrade>-->
-<!--                            &lt;!&ndash; optional - name &ndash;&gt;-->
-<!--                            <name>NDCG@8</name>-->
-<!--                        </ndcgAt8>-->
-<!--                        <ndcgAt8>-->
-<!--                            <class>io.sease.rre.core.domain.metrics.impl.NDCGAtK</class>-->
+<!--                        <expectedReciprocalRank>-->
+<!--                            <class>io.sease.rre.core.domain.metrics.impl.ExpectedReciprocalRank</class>-->
 <!--                            <k>10</k>-->
-<!--                            &lt;!&ndash; optional - max/default grades &ndash;&gt;-->
 <!--                            <maximumGrade>4</maximumGrade>-->
-<!--                            <missingGrade>2</missingGrade>-->
-<!--                            &lt;!&ndash; optional - name &ndash;&gt;-->
-<!--                            <name>NDCG@10</name>-->
-<!--                        </ndcgAt8>-->
+<!--                            <missingGrade>2.5</missingGrade>-->
+<!--                            <name>ERR@10_missing2.5</name>-->
+<!--                        </expectedReciprocalRank>                        -->
+
                     </parameterizedMetrics>
                     <evaluation>
                         <runAsync>true</runAsync>
