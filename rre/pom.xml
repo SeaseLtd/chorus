@@ -85,7 +85,7 @@
                         Metrics that don't require any parameter.
                     -->
                     <metrics>
-<!--                    <param>io.sease.rre.core.domain.metrics.impl.NDCGAtTen</param>-->
+<!--                        <param>io.sease.rre.core.domain.metrics.impl.NDCGAtTen</param>-->
                         <param>io.sease.rre.core.domain.metrics.impl.PrecisionAtTen</param>
                     </metrics>
 
@@ -109,7 +109,7 @@
 <!--                            <maximumGrade>4</maximumGrade>-->
 <!--                            <missingGrade>2.5</missingGrade>-->
 <!--                            <name>ERR@10_missing2.5</name>-->
-<!--                        </expectedReciprocalRank>                        -->
+<!--                        </expectedReciprocalRank>-->
 
                     </parameterizedMetrics>
                     <evaluation>
