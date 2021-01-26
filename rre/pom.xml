@@ -110,7 +110,10 @@
 <!--                            <missingGrade>2.5</missingGrade>-->
 <!--                            <name>ERR@10_missing2.5</name>-->
 <!--                        </expectedReciprocalRank>-->
-
+<!--                        <recallAtK>-->
+<!--                            <class>io.sease.rre.core.domain.metrics.impl.RecallAtK</class>-->
+<!--                            <k>10</k>-->
+<!--                        </recallAtK>-->
                     </parameterizedMetrics>
                     <evaluation>
                         <runAsync>true</runAsync>
